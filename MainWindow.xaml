@@ -1,0 +1,58 @@
+﻿<Window x:Name="frmMain" x:Class="Tirlea_Paul_Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tirlea_Paul_Lab2"
+        mc:Ignorable="d"
+        Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+    <Grid>
+        <Label x:Name="lblTitle" Content="Pizza - Bake &amp; Sale" FontSize="24" FontWeight="Bold" Margin="288,10,288,387"/>
+        <GroupBox x:Name="gbPizza" Header="Pizza Type" FontWeight="Bold" Margin="10,47,10,281">
+            <Canvas Margin="0,0,-2,0">
+                <Label x:Name="lblMargheritaPizza" Content="Margherita Pizza" Canvas.Top="11" FontWeight="Normal"/>
+                <TextBox x:Name="txtMargheritaPizza" Canvas.Left="103" Canvas.Top="15" Text="0" TextWrapping="Wrap" Width="120" TextAlignment="Right" IsReadOnly="True" FontWeight="Normal"/>
+                <Label x:Name="lblPepperoniPizza" Content="Pepperoni Pizza" Canvas.Top="49" FontWeight="Normal" Canvas.Left="5"/>
+                <TextBox x:Name="txtPepperoniPizza" Canvas.Left="103" Canvas.Top="57" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True" FontWeight="Normal" TextAlignment="Right"/>
+                <Label x:Name="lblVeggiePizza" Content="Veggie Pizza" Canvas.Left="308" Canvas.Top="11" FontWeight="Normal"/>
+                <TextBox x:Name="txtVeggiePizza" Canvas.Left="389" Canvas.Top="15" Text="0" TextWrapping="Wrap" Width="120" TextAlignment="Right" IsReadOnly="True" FontWeight="Normal"/>
+                <Label x:Name="lblQuatroPizza" Content="Quattro Stagioni Pizza" Canvas.Left="257" Canvas.Top="49" FontWeight="Normal"/>
+                <TextBox x:Name="txtQuatroPizza" Canvas.Left="389" Canvas.Top="53" Text="0" TextWrapping="Wrap" Width="120" IsReadOnly="True" FontWeight="Normal" TextAlignment="Right"/>
+                <Label x:Name="lblCanibalePizza" Content="Canibale Pizza " Canvas.Left="548" Canvas.Top="11" FontWeight="Normal"/>
+                <TextBox x:Name="txtCanibalePizza" Canvas.Left="642" Canvas.Top="15" Text="0" TextWrapping="Wrap" Width="120" FontWeight="Normal" TextAlignment="Right" IsReadOnly="True"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="gbSale" Header="Current Sale" FontWeight="Bold" Margin="10,187,10,32">
+            <Canvas>
+                <Label x:Name="lblQuantity" Content="Quantity" Canvas.Left="10" Canvas.Top="10" FontWeight="Normal"/>
+                <TextBox x:Name="txtQuantity" Canvas.Left="71" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="120" FontWeight="Normal" TextAlignment="Right"/>
+                <Label x:Name="lblType" Content="Type" Canvas.Left="224" Canvas.Top="10" FontWeight="Normal"/>
+                <ComboBox x:Name="cmbType" Canvas.Left="264" Canvas.Top="12" Width="120"/>
+                <Label x:Name="lblPrice" Content="Price" Canvas.Left="427" Canvas.Top="10" FontWeight="Normal" RenderTransformOrigin="0.073,0.396"/>
+                <TextBox x:Name="txtPrice" Canvas.Left="487" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="120" FontWeight="Normal" TextAlignment="Right" IsReadOnly="True" RenderTransformOrigin="0.777,0.884"/>
+                <ListBox x:Name="lstSale" Height="110" Width="597" Canvas.Top="41" Canvas.Left="10"/>
+                <Label x:Name="lblTotal" Content="TOTAL" Canvas.Left="422" Canvas.Top="156"/>
+                <TextBox x:Name="txtTotal" Canvas.Left="487" Canvas.Top="160" Text="0" TextWrapping="Wrap" Width="120" FontWeight="Normal" TextAlignment="Right" IsReadOnly="True"/>
+                <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="654" Canvas.Top="61" FontWeight="Normal" Width="84"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="654" Canvas.Top="96" FontWeight="Normal" Width="84"/>
+                <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="654" Canvas.Top="156" Height="32" Width="84"/>
+            </Canvas>
+        </GroupBox>
+        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="81">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="Pizza">
+                <MenuItem Header="Make">
+                    <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"/>
+                    <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"/>
+                    <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"/>
+                    <MenuItem x:Name="quatPizzaMenuItem" Header="Quattro Stagioni Pizza"/>
+                    <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"/>
+                </MenuItem>
+                <MenuItem Header="Stop"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
